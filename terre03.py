@@ -14,6 +14,6 @@ else:
 
     for x in range(lettreDepart,ord('z')+1):
         alphabet += chr(x)
-        x++
+        x += 1
 
     print(alphabet)
