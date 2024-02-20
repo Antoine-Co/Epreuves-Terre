@@ -1,7 +1,8 @@
 import sys
 
+#Get the array of args
 arguments = sys.argv
 
-#For each args passed to the script avoiding the name of the script
+#Loop for each args passed to the script (begin at 1 : don't want the name of the sript)
 for i in range(1,len(arguments)):
     print(arguments[i])

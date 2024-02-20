@@ -1,18 +1,19 @@
 import sys
 
-argument = sys.argv
+#Get the array of args
+arguments = sys.argv
 
 #Check if the argument is well done and if its a numeric value
-if (len(argument) <= 2 or len(argument) > 3 or not argument[1].isnumeric()
-    or not argument[2].isnumeric() ):
-    print("Tu ne me la mettras pas à l’envers.")
-else:
-    entier1 = int(argument[1]) #get the numeric values
-    entier2 = int(argument[2])
+if (len(arguments) != 3 or not arguments[1].isnumeric() or not arguments[2].isnumeric()):
+    print("Tu ne me la mettras pas à l’envers. Il faut 2 arguments entiers.")
+    exit()
 
-    #Check for the division by 0 or divisor > dividend
-    if (entier2 == 0 or entier2 > entier1):
-        print("Erreur.")
-    else:
-        print("Résultat: ", entier1//entier2) #int division
-        print("Reste: ", entier1%entier2) #modulo for the remainder
+int1 = int(arguments[1]) #Convert string to numeric values
+int2 = int(arguments[2])
+
+#Check for the division by 0 or divisor > dividend
+if (int2 == 0 or int2 > int1):
+    print("Erreur. Division par 0 ! Ou diviseur > dividende.")
+else:
+    print("Résultat: ", int1//int2) #Int division
+    print("Reste: ", int1%int2) #Modulo for the remainder

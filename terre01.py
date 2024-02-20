@@ -1,3 +1,4 @@
+#Get path of the script
 nameFilePath = __file__
 index = -1
 lastLetter = nameFilePath[index]
@@ -10,4 +11,5 @@ while lastLetter != '/':
 #We keep only the name of the file from the path
 nameFile = __file__[index+1:len(__file__)]
 
+#Display the name of the file 
 print(nameFile)

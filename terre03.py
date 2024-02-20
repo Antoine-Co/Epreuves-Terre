@@ -1,19 +1,20 @@
 import sys
 
-firstArg = sys.argv[1]
+#Get the array of args
+arguments = sys.argv
 
-#Check len arg -> only char of len=1
-#Check if the arg is a letter
-if (len(firstArg) > 1 or not firstArg.isalpha()):
+#Check the arguments and if its a letter
+if (len(arguments) != 2 or not arguments[1].isalpha() or not len(arguments[1]) == 1):
     print("Dsl il faut une seule lettre en argument.")
-elif (len(sys.argv) > 2): #Check the number of args only 1 is required
-    print("Pas plus d'1 argument mon bro !")
-else:
-    lettreDepart = ord(firstArg)
-    alphabet = ""
+    exit()
 
-    for x in range(lettreDepart,ord('z')+1):
-        alphabet += chr(x)
-        x += 1
+lettreDepart = ord(arguments[1])  #Get the position of the letter in the ascii table
+alphabet = ""
 
-    print(alphabet)
+#Loop from position of the letter to the position of the letter "z"
+for x in range(lettreDepart,ord('z')+1):
+    alphabet += chr(x)
+    x += 1
+
+#Display the alphabet from the letter given
+print(alphabet)

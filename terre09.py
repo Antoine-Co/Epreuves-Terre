@@ -1,30 +1,30 @@
 import sys
 
-argument = sys.argv
+#Get the array of args
+arguments = sys.argv
 
-def isSqrt(entier):
+#Function to find the integer square root of a positive int
+def getSqrt(inputInt):
     res = 0
     #Check the only value from 0 to the value but not the float values
-    for i in range(entier):
-        if (i**2 == entier): #if the pow(2) of a number = value -> the sqrt
+    for i in range(inputInt):
+        if (i**2 == inputInt): #If the number pow(2) = value -> the sqrt
             res = i
             break
-        else:
-            i += 1
-            continue
+        i += 1
     return res
 
 #Check if the argument is well done and if its a string
-if (len(argument) != 2 or argument[1].isalpha()):
+if (len(arguments) != 2 or arguments[1].isalpha()):
     print("Erreur !")
 else:
-    entier = int(argument[1]) #Get value
+    inputInt = int(arguments[1]) #Get value
 
     #Check if its positive number
-    if (entier < 0):
+    if (inputInt < 0):
         print("Erreur !")
     else:
-        res = isSqrt(entier)
+        res = getSqrt(inputInt)
 
         #Display the result
         if (res == 0):
