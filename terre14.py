@@ -21,7 +21,7 @@ if (len(intTab) < 2):
 def isSorted(intTab):
     if(intTab[0] <= intTab[1]):
         if (len(intTab) > 2):                          #Lenght > 2 because we can only compare 2 elts
-            return tableauTri(intTab[1:len(intTab)])   #Recursivity with the array without the fisrt elt
+            return isSorted(intTab[1:len(intTab)])   #Recursivity with the array without the fisrt elt
         elif (len(intTab) == 2):
             return True
         else:
